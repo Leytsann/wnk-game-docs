@@ -8,3 +8,285 @@
   font-weight: 800;
   letter-spacing: -0.03em;
 }
+
+/* =========================================
+   WnK Documentation Design System
+   Quartz Custom Components
+========================================= */
+
+/* =========================================
+   Two Columns Layout
+========================================= */
+
+.two-column {
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 50px;
+
+  align-items: center;
+
+  margin: 40px 0;
+}
+
+.two-column img {
+  width: 100%;
+
+  max-height: 320px;
+
+  object-fit: cover;
+
+  border-radius: 14px;
+}
+
+.column-content {
+  max-width: 520px;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+  .two-column {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+}
+
+/* =========================================
+   Feature Cards
+========================================= */
+
+.feature-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin: 35px 0;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 14px;
+
+  padding: 22px;
+
+  min-height: 140px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+
+  background: rgba(255, 255, 255, 0.07);
+
+  border-color: var(--secondary);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+
+  margin-bottom: 18px;
+
+  font-size: 1.05rem;
+
+  color: var(--dark);
+}
+
+.feature-card p {
+  margin: 0;
+
+  color: var(--gray);
+
+  font-size: 0.92rem;
+
+  line-height: 1.6;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   Gameplay Loop
+========================================= */
+
+.system-loop {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 30px;
+
+  border: 1px solid var(--lightgray);
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  margin: 35px 0;
+}
+
+.loop-step {
+  text-align: center;
+
+  font-weight: 600;
+
+  min-width: 90px;
+}
+
+.loop-arrow {
+  font-size: 25px;
+
+  color: var(--secondary);
+}
+
+@media (max-width: 700px) {
+  .system-loop {
+    flex-direction: column;
+  }
+
+  .loop-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* =========================================
+   Design Goals
+========================================= */
+
+.design-goals {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border: 1px solid var(--lightgray);
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  margin: 35px 0;
+}
+
+.goal-card {
+  padding: 25px;
+
+  border-right: 1px solid var(--lightgray);
+}
+
+.goal-card:last-child {
+  border-right: none;
+}
+
+.goal-card h3 {
+  margin-top: 0;
+
+  font-size: 1rem;
+}
+
+.goal-card p {
+  color: var(--gray);
+
+  font-size: 0.9rem;
+
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .design-goals {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .goal-card:nth-child(2) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .design-goals {
+    grid-template-columns: 1fr;
+  }
+
+  .goal-card {
+    border-right: none;
+
+    border-bottom: 1px solid var(--lightgray);
+  }
+}
+
+/* =========================================
+   System Images
+========================================= */
+
+.system-image {
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  margin: 35px 0;
+}
+
+.system-image img {
+  width: 100%;
+
+  display: block;
+}
+
+/* =========================================
+   Light Mode Adjustments
+========================================= */
+
+@media (prefers-color-scheme: light) {
+  .feature-card {
+    background: #ffffff;
+
+    border: 1px solid #d8dee9;
+  }
+
+  .feature-card:hover {
+    background: #f8fafc;
+
+    border-color: var(--secondary);
+  }
+
+  .system-loop {
+    background: #ffffff;
+
+    border: 1px solid #d8dee9;
+  }
+
+  .design-goals {
+    border-color: #d8dee9;
+  }
+
+  .goal-card {
+    border-color: #d8dee9;
+  }
+}
